@@ -18,7 +18,7 @@ public class Flink03_Stream_UnBounded_WordCount {
         //1.获取流的执行环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //2.读取无界数据流
-        DataStreamSource<String> streamSource = env.socketTextStream("hadoop102", 9999);
+        DataStreamSource<String> streamSource = env.socketTextStream("hadoop102", 9991);
         //3.将数据按照空格切分
         SingleOutputStreamOperator<Tuple2<String, Long>> wordToOneDStream = streamSource.flatMap(new FlatMapFunction<String, Tuple2<String, Long>>() {
             @Override

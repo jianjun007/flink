@@ -40,7 +40,7 @@ public class Flink04_YarnMode_Test {
     }
 
     public static void test3(StreamExecutionEnvironment env) throws Exception {
-        DataStreamSource<String> stringDataStreamSource = env.socketTextStream("hadoop102", 9999);
+        DataStreamSource<String> stringDataStreamSource = env.socketTextStream("hadoop102", 9991);
         stringDataStreamSource.map(new MapFunction<String, String>() {
             @Override
             public String map(String value) throws Exception {
